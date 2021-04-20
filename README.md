@@ -11,13 +11,13 @@ Let see folders structures
 ![default files structures](assets/structure-default.png)
 
 
-For example if there is an image subfolder under your extension project workspace:
+For example let see who to use this extension:
 
-![demo]\(assets/demo.gif)
+![demo](assets/demo.gif)
 
-## Requirements
+<!-- ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+If you have any requirements or dependencies, add a section describing those and how to install and configure them. -->
 <!-- 
 ## Extension Settings
 
