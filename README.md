@@ -8,12 +8,12 @@ This extension allows flutter developper  quickly scaffold flutter VS Code proje
 ## Features
 Let see folders structures
 
-\!\[feature X\]\(assets/structure-default.png\)
+![default files structures](assets/structure-default.png)
 
 
 For example if there is an image subfolder under your extension project workspace:
 
-\!\[feature X\]\(assets/demo.gif\)
+![demo]\(assets/demo.gif)
 
 ## Requirements
 
