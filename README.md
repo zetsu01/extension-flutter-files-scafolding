@@ -1,6 +1,6 @@
 # Flutter-files-scafolding
 [![Awesome Flutter](https://img.shields.io/badge/Awesome-Flutter-blue.svg?longCache=true&style=flat-square)](https://github.com/Solido/awesome-flutter#vscode)
-[![Install](https://vsmarketplacebadge.apphb.com/installs-short/gornivv.vscode-flutter-files.svg)](https://marketplace.visualstudio.com/items?itemName=gornivv.vscode-flutter-files)
+[![Install](https://vsmarketplacebadge.apphb.com/installs-short/gornivv.vscode-flutter-files.svg)](https://marketplace.visualstudio.com/items?itemName=zetsu01.flutter-files-scafolding)
 
 This extension allows flutter developper  quickly scaffold flutter VS Code project.
 
