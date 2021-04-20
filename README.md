@@ -1,21 +1,24 @@
-# flutter-files-scafolding README
+# Flutter-files-scafolding
+[![Awesome Flutter](https://img.shields.io/badge/Awesome-Flutter-blue.svg?longCache=true&style=flat-square)](https://github.com/Solido/awesome-flutter#vscode)
+[![Install](https://vsmarketplacebadge.apphb.com/installs-short/gornivv.vscode-flutter-files.svg)](https://marketplace.visualstudio.com/items?itemName=gornivv.vscode-flutter-files)
 
-This is the README for your extension "flutter-files-scafolding". After writing up a brief description, we recommend including the following sections.
+This extension allows flutter developper  quickly scaffold flutter VS Code project.
 
+<!-- Inspired by the [Flutter scalable folder & files structure tutorial](https://medium.com/flutter-community/flutter-scalable-folder-files-structure-8f860faafebd) by [Chinmay Mourya](https://github.com/ResoCoder), this extension will help you quickly scaffold a feature. -->
 ## Features
+Let see folders structures
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+\!\[feature X\]\(assets/structure-default.png\)
+
 
 For example if there is an image subfolder under your extension project workspace:
 
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+\!\[feature X\]\(assets/demo.gif\)
 
 ## Requirements
 
 If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
+<!-- 
 ## Extension Settings
 
 Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
@@ -52,9 +55,9 @@ Added features X, Y, and Z.
 
 Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines) -->
 
-## Working with Markdown
+<!-- ## Working with Markdown
 
 **Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
 
@@ -67,4 +70,4 @@ Ensure that you've read through the extensions guidelines and follow the best pr
 * [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
 * [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
-**Enjoy!**
+**Enjoy!** -->
