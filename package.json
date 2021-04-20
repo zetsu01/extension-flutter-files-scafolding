@@ -1,11 +1,12 @@
 {
 	"name": "flutter-files-scafolding",
-	"displayName": "flutter files scafolding",
+	"displayName": "Flutter files scafolding",
 	"description": "Add easyly good structured files",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.55.0"
 	},
+	"publisher": "zetsu01",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/zetsu01/extension-flutter-files-scafolding"

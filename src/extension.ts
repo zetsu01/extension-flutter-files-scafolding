@@ -52,51 +52,73 @@ export async function generateFile(targetDirectory: string) {
 	const assetsDirectoryPath = path.join(targetDirectory, 'assets');
 	const libDirectoryPath = path.join(targetDirectory, 'lib');
 
-	if (!existsSync(assetsDirectoryPath)) {
-		createDirectories(assetsDirectoryPath, ['images', 'html', 'i18n']);
-	} else {
-		return;
-	}
-
-
 	const configDirectoryPath = path.join(libDirectoryPath, 'configs');
 	await createDirectories(configDirectoryPath, ['routes', 'themes']);
-	await createFile('routes', path.join(configDirectoryPath, 'routes'));
-	await createFile('dark_theme', path.join(configDirectoryPath, 'themes'));
-	await createFile('light_theme', path.join(configDirectoryPath, 'themes'));
-	await createFile('theme_config', path.join(configDirectoryPath, 'themes'));
+	await Promise.all([
+		createFile('routes', path.join(configDirectoryPath, 'routes')),
+		createFile('dark_theme', path.join(configDirectoryPath, 'themes')),
+		createFile('light_theme', path.join(configDirectoryPath, 'themes')),
+		createFile('theme_config', path.join(configDirectoryPath, 'themes')),
+	]);
+
 
 	const contantsDirectoryPath = path.join(libDirectoryPath, 'constants');
 	await createDirectories(contantsDirectoryPath, []);
-	await createFile('api_path', path.join(contantsDirectoryPath, 'constants'));
-	await createFile('app_constants', path.join(contantsDirectoryPath, 'constants'));
-	await createFile('assets_path', path.join(contantsDirectoryPath, 'constants'));
+	await Promise.all([
+		createFile('api_path', contantsDirectoryPath),
+		createFile('app_constants', contantsDirectoryPath),
+		createFile('assets_path', contantsDirectoryPath),
+	]);
+
 
 	const widgetsDirectoryPath = path.join(libDirectoryPath, 'widgets');
 	await createDirectories(widgetsDirectoryPath, []);
-	await createFile('widgets', path.join(widgetsDirectoryPath, 'widgets'));
+	await createFile('widgets', widgetsDirectoryPath);
 
 	const utilsDirectoryPath = path.join(libDirectoryPath, 'utils');
 	await createDirectories(utilsDirectoryPath, ['helpers', 'mixins', 'services', 'ui']);
-	await createFile('text_helper', path.join(utilsDirectoryPath, 'mixins'));
-	await createFile('validation_mixin', path.join(utilsDirectoryPath, 'themes'));
-	await createFile('native_api_service', path.join(utilsDirectoryPath, 'services'));
-	await createFile('request_api_service', path.join(utilsDirectoryPath, 'services'));
-	await createFile('secure_storage_api_service', path.join(utilsDirectoryPath, 'services'));
-	// 
-	const utilsUiDirectoryPath = path.join(libDirectoryPath, 'utils', 'ui');
-	await createDirectories(utilsUiDirectoryPath, ['animations']);
-	await createFile('animations', path.join(utilsUiDirectoryPath, 'animations'));
+	const utilsUiDirectoryPath = path.join(utilsDirectoryPath, 'ui', 'animation');
+	await createDirectories(utilsUiDirectoryPath, []);
+	await Promise.all([
+		createFile('text_helper', path.join(utilsDirectoryPath, 'helpers')),
+		createFile('validation_mixin', path.join(utilsDirectoryPath, 'mixins')),
+		createFile('native_api_service', path.join(utilsDirectoryPath, 'services')),
+		createFile('request_api_service', path.join(utilsDirectoryPath, 'services')),
+		createFile('secure_storage_api_service', path.join(utilsDirectoryPath, 'services')),
+		createFile('animations', path.join(utilsUiDirectoryPath)),
+		createFile('app_dialogs', path.join(utilsDirectoryPath, 'ui')),
+		createFile('ui_utils', utilsDirectoryPath),
+	]);
+
 
 
 	const coreDirectoryPath = path.join(libDirectoryPath, 'core');
-	await createDirectories(coreDirectoryPath, ['auth', 'settings', 'onboarding']);
+	await createDirectories(coreDirectoryPath, ['settings', 'onboarding']);
+	await createDirectories(path.join(coreDirectoryPath, 'auth'), ['login', 'register', 'forgot_password']);
+	await Promise.all([
+		createFile('application_settings', path.join(coreDirectoryPath, 'settings')),
+		createFile('onboarding1', path.join(coreDirectoryPath, 'onboarding')),
+		createFile('onboarding2', path.join(coreDirectoryPath, 'onboarding')),
+		createFile('onboarding3', path.join(coreDirectoryPath, 'onboarding')),
+	]);
+
 
 	const featuresDirectoryPath = path.join(libDirectoryPath, 'features');
-	await createDirectories(featuresDirectoryPath, ['home']);
-
+	await createDirectories(featuresDirectoryPath, []);
 	const featuresHomeDirectoryPath = path.join(libDirectoryPath, 'features', 'home');
 	await createDirectories(featuresHomeDirectoryPath, ['models', 'repositories', 'screens', 'widgets']);
+	Promise.all([
+		await createFile('model1', path.join(featuresHomeDirectoryPath, 'models')),
+		createFile('repositorie', path.join(featuresHomeDirectoryPath, 'repositories')),
+		createFile('home_screen', path.join(featuresHomeDirectoryPath, 'screens')),
+		createFile('widget', path.join(featuresHomeDirectoryPath, 'widgets')),
+	]);
+
+
+	if (!existsSync(assetsDirectoryPath)) {
+		createDirectories(assetsDirectoryPath, ['images', 'html', 'i18n']);
+	}
+
 }
 
 export async function createDirectories(target: string, childDirectories: string[]): Promise<void> {
